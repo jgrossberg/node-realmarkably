@@ -1,0 +1,8 @@
+body {
+    margin: 10
+}
+
+.input-label {
+    background-color: var(--teal);
+    color: var(--white)
+}

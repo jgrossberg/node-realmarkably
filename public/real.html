@@ -1,0 +1,167 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/style.css">
+  </head>
+
+<body>
+
+      <h1 class="display-4">Realmarkably</h1>
+      <p class="lead">Fill in the property details below or search for an address to auto-populate them.</p>
+      <hr class="my-4">
+      
+      <div class="input-group mb-3 w-50">
+        <input type="text" class="form-control" placeholder="Enter address" aria-label="Username" aria-describedby="basic-addon1">
+        <div class="input-group-append">
+          <span class="input-group-text" id="basic-addon1">:magnifyingglass:</span>
+        </div>
+      </div>
+      <br>
+      <br>
+      <form>
+        <div class="input-group mb-3 w-25">
+          <div class="input-group-prepend ">
+            <label 
+              class="input-group-text bg-primary text-white"
+              id="label-bedrooms"
+              for="inputBedrooms"
+            >
+              Bedrooms
+            </label>
+          </div>
+          <select class="custom-select" id="inputBedrooms">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+          </select>
+        </div>
+        <div class="input-group mb-3 w-25">
+          <div class="input-group-prepend">
+            <label
+              class="input-group-text bg-primary text-white" 
+              id="label-bathrooms"
+              for="inputBathrooms"
+            >
+              Bathrooms
+            </label>
+          </div>
+          <select class="custom-select" id="inputBathrooms">
+              <option value="1">1</option>
+              <option value="15">1.5</option>
+              <option value="2">2</option>
+              <option value="25">2.5</option>
+              <option value="3">3</option>
+              <option value="35">3.5</option>
+          </select>
+        </div>
+        <div class="input-group mb-3 w-25">
+          <div class="input-group-prepend">
+            <label
+              class="input-group-text bg-primary text-white"
+              for="inputZipcode"
+              id="label-zipcode"  
+            >Zip code</label>
+          </div>
+          <input 
+            type="number"
+            step="1"
+            class="form-control" 
+            id="inputZipcode" 
+          >
+        </div>
+        <div class="input-group mb-3 w-25">
+          <div class="input-group-prepend">
+            <label
+              class="input-group-text bg-primary text-white"
+              for="inputSqft"
+              id="label-Sqft"  
+            >Square footage</label>
+          </div>
+          <input 
+            type="number"
+            step="1"
+            class="form-control" 
+            id="inputSqft" 
+          >
+        </div>
+        <h3>
+          Features:
+        </h3>
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Beach</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="exampleCheck2">
+          <label class="form-check-label" for="exampleCheck1">Downtown</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Mountains</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Lake</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Secluded</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Cul de Sac</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Near a park</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="exampleCheck2">
+          <label class="form-check-label" for="exampleCheck1">Pool</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Basement</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Portland</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="exampleCheck2">
+          <label class="form-check-label" for="exampleCheck1">Garage</label>
+        </div>
+        <br>
+        <br>
+        <button type="submit"
+          class="btn btn-primary"
+          onclick="handleSubmit()"
+        >Submit</button>
+        <br>
+        <br>
+        <br>
+      </form>
+
+<textarea
+      id="copyOutput"
+></textarea>
+
+  <script src="./javascripts/real.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
