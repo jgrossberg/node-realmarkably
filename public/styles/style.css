@@ -1,8 +1,16 @@
 body {
-    margin: 10
+  margin: 10;
+}
+
+header {
+  background-color: var(--light);
 }
 
 .input-label {
-    background-color: var(--teal);
-    color: var(--white)
+  background-color: var(--teal);
+  color: var(--white);
+}
+
+.funny {
+  color:purple
 }
