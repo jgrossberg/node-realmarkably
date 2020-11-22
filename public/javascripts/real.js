@@ -27,8 +27,37 @@ const FEATURES = [
   "Fireplace",
 ];
 
-function handleSubmit(evt) {
-  document.getElementById("copyOutput").innerText = "place is a dump";
+function handleSubmit() {
+  let data = {
+    bedrooms: document.getElementById("inputBedrooms").value,
+    bathrooms: document.getElementById("inputBathrooms").value,
+    sqft: document.getElementById("inputSqft").value,
+
+  }
+  postData('/generate', data)
+    .then(res => {
+      this.setCopy(res)
+    }); 
+}
+
+function setCopy(text) {
+  document.getElementById("copyOutput").innerText = text;
+}
+
+async function postData(url = '', data = {}) {
+  const response  = await fetch(url, {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify(data)
+  })
+  return response.json();
 }
 
 function loadFormData() {
@@ -67,26 +96,26 @@ function loadFormData() {
   });
 }
 
-function initAutocomplete() {
-  autocomplete = new google.maps.places.Autocomplete(
-    document.getElementById("autocomplete"),
-    { types: ["geocode"] }
-  );
-  autocomplete.setFields(["address_component"]);
-}
+// function initAutocomplete() {
+//   autocomplete = new google.maps.places.Autocomplete(
+//     document.getElementById("autocomplete"),
+//     { types: ["geocode"] }
+//   );
+//   autocomplete.setFields(["address_component"]);
+// }
 
-function geolocate() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition((position) => {
-      const geolocation = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-      };
-      const circle = new google.maps.Circle({
-        center: geolocation,
-        radius: position.coords.accuracy,
-      });
-      autocomplete.setBounds(circle.getBounds());
-    });
-  }
-}
+// function geolocate() {
+//   if (navigator.geolocation) {
+//     navigator.geolocation.getCurrentPosition((position) => {
+//       const geolocation = {
+//         lat: position.coords.latitude,
+//         lng: position.coords.longitude,
+//       };
+//       const circle = new google.maps.Circle({
+//         center: geolocation,
+//         radius: position.coords.accuracy,
+//       });
+//       autocomplete.setBounds(circle.getBounds());
+//     });
+//   }
+// }

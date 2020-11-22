@@ -2,6 +2,33 @@ body {
   margin: 10;
 }
 
+section.main {
+
+  background-color: lightgrey
+}
+
+#main {
+  display: flex;
+}
+
+.container-item {
+  flex-grow: 1;
+  margin: 3rem
+}
+
+textarea {
+  width: 100%;
+  min-height: 10rem;
+}
+
+#propertyForm {
+  width: 40%
+}
+
+#propertyDetails {
+  width: 40%
+}
+
 header {
   background-color: var(--light);
 }

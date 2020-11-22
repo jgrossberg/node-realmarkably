@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <script
       defer
-      src="https://maps.googleapis.com/maps/api/js?key=<GOOGLE_API_KEY_STRING>&callback=initAutocomplete&libraries=places&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=<API_KEY_HERE&callback=initAutocomplete&libraries=places&v=weekly"
     ></script>
 
     <script src="https://kit.fontawesome.com/ff9fc93d37.js" crossorigin="anonymous"></script>
@@ -21,99 +21,110 @@
       <h5>Never write copy again</h4>
       <hr class="my-4" />
     </header>
-    <section 
-      class="mx-auto w-50"
-    >
-  
-    <p class="lead">
-      Fill in the property details below or search for an address to
-      auto-populate them.
-    </p>
     
-    <div id="locationField" class="input-group mb-3">
-      <input
-        type="text"
-        id="autocomplete"
-        onfocus="geolocate()"
-        class="form-control"
-        placeholder="Enter address"
-        aria-label="Address"
-        aria-describedby="basic-addon1"
-      />
-      <div class="input-group-append">
-        <span class="input-group-text" id="basic-addon1"
-        ><i class="fas fa-search-location"></i>
-        
-        </span
+    <section class="main">
+      <div class="main-container"
+        id="main"
+      >
+        <div class="container-item"
+          id="propertyForm"
         >
-      </div>
-    </div>
-    <br />
-    <br />
-    <form>
-      <div class="input-group mb-3 w-50">
-        <div class="input-group-prepend">
-          <label
-            class="input-group-text bg-primary text-white"
-            id="label-bedrooms"
-            for="inputBedrooms"
-          >
-            Bedrooms
-          </label>
+  
+          <p class="lead">
+            Fill in the property details below or search for an address to
+            auto-populate them.
+          </p>
+          
+          <div id="locationField" class="input-group mb-3">
+            <input
+              type="text"
+              id="autocomplete"
+              onfocus="geolocate()"
+              class="form-control"
+              placeholder="Enter address"
+              aria-label="Address"
+              aria-describedby="basic-addon1"
+            />
+            <div class="input-group-append">
+              <span class="input-group-text" id="basic-addon1"
+              ><i class="fas fa-search-location"></i>
+              
+              </span
+              >
+            </div>
+          </div>
+          <br />
+          <br />
+          <form>
+            <div class="input-group mb-3 w-50">
+              <div class="input-group-prepend">
+                <label
+                  class="input-group-text bg-primary text-white"
+                  id="label-bedrooms"
+                  for="inputBedrooms"
+                >
+                  Bedrooms
+                </label>
+              </div>
+              <select class="custom-select" id="inputBedrooms">
+              </select>
+            </div>
+            <div class="input-group mb-3 w-50">
+              <div class="input-group-prepend">
+                <label
+                  class="input-group-text bg-primary text-white"
+                  id="label-bathrooms"
+                  for="inputBathrooms"
+                >
+                  Bathrooms
+                </label>
+              </div>
+              <select class="custom-select" id="inputBathrooms">
+              </select>
+            </div>
+            <div class="input-group mb-3 w-50">
+              <div class="input-group-prepend">
+                <label
+                  class="input-group-text bg-primary text-white"
+                  for="inputZipcode"
+                  id="label-zipcode"
+                  >Zip code</label
+                >
+              </div>
+              <input type="number" step="1" class="form-control" id="inputZipcode" />
+            </div>
+            <div class="input-group mb-3 w-50">
+              <div class="input-group-prepend">
+                <label
+                  class="input-group-text bg-primary text-white"
+                  for="inputSqft"
+                  id="label-Sqft"
+                  >Square footage</label
+                >
+              </div>
+              <input type="number" step="1" class="form-control" id="inputSqft" />
+            </div>
+            <h3>Features:</h3>
+            <div id="features">
+      
+            </div>
+            <br />
+            <br />
+            <button type="button" class="btn btn-primary" onclick="handleSubmit()">
+              Submit
+            </button>
+          </form>
+  
         </div>
-        <select class="custom-select" id="inputBedrooms">
-        </select>
-      </div>
-      <div class="input-group mb-3 w-50">
-        <div class="input-group-prepend">
-          <label
-            class="input-group-text bg-primary text-white"
-            id="label-bathrooms"
-            for="inputBathrooms"
-          >
-            Bathrooms
-          </label>
+        <div class="container-item"
+          id="propertyDetails"
+        >
+          <textarea class="mx-auto w-100" id="copyOutput"></textarea>
         </div>
-        <select class="custom-select" id="inputBathrooms">
-        </select>
       </div>
-      <div class="input-group mb-3 w-50">
-        <div class="input-group-prepend">
-          <label
-            class="input-group-text bg-primary text-white"
-            for="inputZipcode"
-            id="label-zipcode"
-            >Zip code</label
-          >
-        </div>
-        <input type="number" step="1" class="form-control" id="inputZipcode" />
-      </div>
-      <div class="input-group mb-3 w-50">
-        <div class="input-group-prepend">
-          <label
-            class="input-group-text bg-primary text-white"
-            for="inputSqft"
-            id="label-Sqft"
-            >Square footage</label
-          >
-        </div>
-        <input type="number" step="1" class="form-control" id="inputSqft" />
-      </div>
-      <h3>Features:</h3>
-      <div id="features">
+    </section>
+    
 
-      </div>
-      <br />
-      <br />
-      <button type="submit" class="btn btn-primary" onclick="handleSubmit()">
-        Submit
-      </button>
-      <br />
-      <br />
-      <br />
-    </form>
-
-    <textarea id="copyOutput"></textarea>
     <script src="./javascripts/real.js"></script>
 
     <script
